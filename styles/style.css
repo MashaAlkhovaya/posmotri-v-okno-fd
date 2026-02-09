@@ -13,7 +13,6 @@ html {
   justify-content: center;
   align-items: center;
   width: 1200px;
-  height: 800px;
   margin: auto;
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -158,6 +157,7 @@ ol {
 
 .content__video-card-title {
   width: 196px;
+  padding-bottom: 6px;
   overflow: hidden;
   font-family: Oswald, sans-serif;
   font-weight: 700;
@@ -171,11 +171,13 @@ ol {
 .content__video-card-description {
   display: -webkit-box;
   overflow: hidden;
-  font-weight: 400;
-  font-size: 18px;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: 16.2px;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 
@@ -217,10 +219,11 @@ ol {
   border: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
+  padding-top: 5px;
   color: inherit;
-  font-family: "FiraSansCondensed", sans-serif;
-  font-weight: 400;
-  font-size: 17px;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
   background-color: transparent;
   appearance: none;
   -webkit-appearance: none;
@@ -229,11 +232,17 @@ ol {
 
 .search-form__textfield::placeholder {
   color: rgb(255 255 255 / 0.7);
+  line-height: 100%;
   appearance: none;
 }
 
 .search-form__textfield:focus {
   outline: none;
+}
+
+.search-form__label:has(.search-form__textfield:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .search-form__pseudo-checkbox {
@@ -257,20 +266,15 @@ ol {
   background-color: white;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
-.search-form__label:active {
+.search-form__label:active .search-form__label-text {
   text-decoration: none;
 }
 
 .search-form__label:has(.search-form__checkbox:focus-visible) {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-}
-
-.search-form__label:has(.search-form__textfield:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -280,8 +284,9 @@ ol {
   min-height: 34px;
   border: 1px solid #fff;
   color: #fff;
-  font-family: "FiraSansCondensed", sans-serif;
-  font-size: 18px;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
   background-color: transparent;
   cursor: pointer;
 }
@@ -315,7 +320,7 @@ ol {
 }
 
 .content__card-link_current {
-  background-color: transparent;
+  background-color: rgba(84, 80, 80, 1);
 }
 
 .content__card-link:hover {
